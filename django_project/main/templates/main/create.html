@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    About page
+{% endblock %}
+
+{% block content %}
+    <h1>Yegor, add some new tasks!</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.task }}
+        <input type="text" placeholder="Input title" class="form-control"><br>
+        <textarea placeholder="Input description" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">Add new task!</button>
+        <span>{{error}}</span>
+    </form>
+{% endblock %}
+
